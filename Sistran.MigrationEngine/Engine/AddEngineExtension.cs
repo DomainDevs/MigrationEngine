@@ -14,11 +14,12 @@ public static class AddEngineExtension
     public static IServiceCollection AddEngineServices(this IServiceCollection services)
     {
         // Registramos MigrationService
-        // Usamos factory para inyectar LogWriterMD desde el contenedor
+        // Usamos factory para inyectar ambos loggers desde el contenedor
         services.AddSingleton<Services.MigrationService>(sp =>
         {
-            var logWriter = sp.GetRequiredService<LogWriterMD>();
-            return new Services.MigrationService(logWriter);
+            var mdWriter = sp.GetRequiredService<ILogWriterMD>();
+            var jsonWriter = sp.GetRequiredService<ILogWriterJSON>();
+            return new Services.MigrationService(mdWriter, jsonWriter);
         });
 
         return services;

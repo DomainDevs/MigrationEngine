@@ -54,7 +54,8 @@ try
     migrationService.EjecutarJobDesdeCarpeta(
         migrationConfigObj.NombreJob,
         migrationConfigObj.CarpetaPaquetes,
-        migrationConfigObj.PaquetesIncluir
+        migrationConfigObj.PaquetesIncluir,
+        migrationConfigObj.PaquetesOmitir
     );
 
     Console.ForegroundColor = ConsoleColor.Yellow;

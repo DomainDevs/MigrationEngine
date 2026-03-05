@@ -17,8 +17,15 @@ namespace Infrastructure
             if (string.IsNullOrWhiteSpace(rutaLogs))
                 throw new ArgumentException("Debe indicar la ruta base para los logs.", nameof(rutaLogs));
 
-            // Registramos LogWriterMD como singleton
-            services.AddSingleton(new LogWriterMD(rutaLogs));
+            // Registrar LogWriterMD e ILogWriterMD
+            var mdWriter = new LogWriterMD(rutaLogs);
+            services.AddSingleton(mdWriter);
+            services.AddSingleton<ILogWriterMD>(mdWriter);
+
+            // Registrar LogWriterJSON e ILogWriterJSON
+            var jsonWriter = new LogWriterJSON(rutaLogs);
+            services.AddSingleton(jsonWriter);
+            services.AddSingleton<ILogWriterJSON>(jsonWriter);
 
             return services;
         }
