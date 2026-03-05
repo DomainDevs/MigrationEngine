@@ -2,8 +2,8 @@
 using Infrastructure.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Reflection.Metadata;
 
 namespace Engine.Services
 {
@@ -55,7 +55,7 @@ namespace Engine.Services
         }
 
         /// <summary>
-        /// Ejecuta todos los pasos de un job
+        /// Ejecuta todos los pasos de un job existente
         /// </summary>
         public void EjecutarJob(MigrationJob job)
         {
@@ -68,8 +68,32 @@ namespace Engine.Services
 
             job.Completado = job.Pasos.All(p => p.Exito);
 
-            // Escribir log al final
             _logWriter.EscribirLog(job.Nombre, logs);
+        }
+
+        /// <summary>
+        /// Método nuevo: crea y ejecuta un job dinámico desde una carpeta
+        /// </summary>
+        public void EjecutarJobDesdeCarpeta(string nombreJob, string carpetaPaquetes)
+        {
+            if (string.IsNullOrWhiteSpace(nombreJob)) throw new ArgumentException("Nombre del job requerido.", nameof(nombreJob));
+            if (!Directory.Exists(carpetaPaquetes)) throw new DirectoryNotFoundException($"La carpeta {carpetaPaquetes} no existe.");
+
+            var archivos = Directory.GetFiles(carpetaPaquetes, "*.dtsx");
+
+            var pasos = archivos.Select(a => new MigrationStep
+            {
+                Nombre = Path.GetFileNameWithoutExtension(a),
+                RutaPaquete = a
+            }).ToList();
+
+            var job = new MigrationJob
+            {
+                Nombre = nombreJob,
+                Pasos = pasos
+            };
+
+            EjecutarJob(job);
         }
     }
 }
