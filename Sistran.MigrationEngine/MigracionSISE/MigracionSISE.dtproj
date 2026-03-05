@@ -26,12 +26,10 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-O7N0ROR</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAAD/8ugTcT+NTLi0MSLYGOirdjRpry7ulUn34pQ0ZpbJngAAAAAOgAAAAAIAACAAAAATAoeCxd8NFi7Yw5Ej8Qd4etpMkonrfVN/kfAfLgsBP5AAAAA9NxEzD4LH9CKn1kIQLVqdMCEY9DgyhaTnhwqaTrDt99oY4IkpwWzLqXHsDf/KT0MIBVdhX5uDc48qgkUXhbHc88UMcQ4yH0SILCI7wll6oRX6CEbgpy8vmJgP3oKJaI8jSudxq8Shm39/VFeT/+UsMdOPjPvLcALGeOVCAeRhfwyt3bleAYwAXIXqbBH7/4RAAAAAL/vBFmOBIaUJBWtRfVxAVHe/y9puRdBsMgjQHIcEZ+hF/wiQqugDoBz4Jd7y3ofkrgKm6yrfbqBpMc+7lopZbA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAABgrb9h2axGRLVm16rmPF6A1RUH4QS53sjNaHDdw9hL+QAAAAAOgAAAAAIAACAAAADe7HcJ8bH8dojTtkLa9w3e88SjXoAPwUB85g9saDht2pAAAACw/dY14OOBba2pSABBOtUOR86FvCODfA8M/SG4NsDc1xln7ZhdXaTlgpUUzmss4naIZgIRjxnwjB0jqU/8GKSdxFzZkantfk+xTnpc6ZXYFxPqnbEI673OkdSxUA2CTFkGhAO4OuWW8kQxJx2Y0i+UnqJT1Ij4h1S5wKyf+x/dKf5jMzJNrwz/AvA5SwKOiLFAAAAAaONQDUJhSz7ns9IVrpSNCK2SJwvjCZYjXzNlaLzWohpONnzlUQ6BE9r5UTHI16AovUGts1n8yTUQ5oXxK3AsaQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="_MigrationLogToMD.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="_MasterExecute.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0001_Clientes.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0002_Polizas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0003_PolizaRiesgos.dtsx" SSIS:EntryPoint="1" />
@@ -342,40 +340,6 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="_MigrationLogToMD.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{11490A88-F59C-47C8-8A2A-E8B1AE52BC89}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">_MigrationLogToMD</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C5CF4176-7903-4850-A669-B3C18EDC7EA1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="_MasterExecute.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{01521B35-3B88-4974-BC8D-957BEB0E8FE7}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">_MasterExecute</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3CFAC742-2039-49CE-840D-53FA5C4859A7}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="0001_Clientes.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{3ED5DEE7-FC29-4AB3-BB1B-82EE3A59319B}</SSIS:Property>
@@ -399,10 +363,10 @@
                 <SSIS:Property SSIS:Name="Name">Polizas</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{65E378FD-A5B4-4BE3-8425-830E6A8FA813}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A29EC7AE-FBC1-4F1B-87EE-80442AFCC3CD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -447,10 +411,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3945960E-F489-4DA4-AEA3-11526034CFED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DD242828-AC3A-4921-9B53-B9F331CEB7EA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

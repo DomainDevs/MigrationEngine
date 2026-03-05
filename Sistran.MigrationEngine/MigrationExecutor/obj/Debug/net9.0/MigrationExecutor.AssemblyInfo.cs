@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Engine")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MigrationExecutor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91c72600420ccf95fcdab6444cc961814673a88e")]
-[assembly: System.Reflection.AssemblyProductAttribute("Engine")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Engine")]
+[assembly: System.Reflection.AssemblyProductAttribute("MigrationExecutor")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MigrationExecutor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

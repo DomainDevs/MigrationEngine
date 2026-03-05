@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A8F1
 		Scripts\dbo.Polizas.sql = Scripts\dbo.Polizas.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationExecutor", "MigrationExecutor\MigrationExecutor.csproj", "{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,12 @@ Global
 		{5DEE59C4-E314-4A80-94BB-79A911A66782}.Development|Any CPU.Build.0 = Release|Any CPU
 		{5DEE59C4-E314-4A80-94BB-79A911A66782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DEE59C4-E314-4A80-94BB-79A911A66782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Development|Any CPU.ActiveCfg = Release|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Development|Any CPU.Build.0 = Release|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39B7E9D-64BA-4A99-BAAD-AC85880222AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
