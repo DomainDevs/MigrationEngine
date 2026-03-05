@@ -13,8 +13,8 @@ try
     // Banner inicial
     Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("=============================================");
-    Console.WriteLine("       MOTOR DE MIGRACIÓN ETL V 1.0.1        ");
-    Console.WriteLine("            SISTRAN 2026/03/05               ");
+    Console.WriteLine("       MOTOR DE MIGRACIÓN ETL V 1.0.0        ");
+    Console.WriteLine("            SISTRAN 2026/03/03               ");
     Console.WriteLine("=============================================");
     Console.ResetColor();
 
