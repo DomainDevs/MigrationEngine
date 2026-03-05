@@ -53,7 +53,8 @@ try
     // Ejecutar job dinámico desde carpeta
     migrationService.EjecutarJobDesdeCarpeta(
         migrationConfigObj.NombreJob,
-        migrationConfigObj.CarpetaPaquetes
+        migrationConfigObj.CarpetaPaquetes,
+        migrationConfigObj.PaquetesEspecificos
     );
 
     Console.ForegroundColor = ConsoleColor.Yellow;

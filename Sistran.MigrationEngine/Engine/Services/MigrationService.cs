@@ -82,14 +82,22 @@ namespace Engine.Services
         }
 
         /// <summary>
-        /// Ejecuta un job dinámico desde carpeta
+        /// Ejecuta un job dinámico desde carpeta, filtrando paquetes si es necesario
         /// </summary>
-        public void EjecutarJobDesdeCarpeta(string nombreJob, string carpetaPaquetes)
+        public void EjecutarJobDesdeCarpeta(string nombreJob, string carpetaPaquetes, List<string>? paquetesEspecificos = null)
         {
             if (string.IsNullOrWhiteSpace(nombreJob)) throw new ArgumentException("Nombre del job requerido.", nameof(nombreJob));
             if (!Directory.Exists(carpetaPaquetes)) throw new DirectoryNotFoundException($"La carpeta {carpetaPaquetes} no existe.");
 
             var archivos = Directory.GetFiles(carpetaPaquetes, "*.dtsx");
+
+            // Filtrar paquetes específicos si se indicaron
+            if (paquetesEspecificos != null && paquetesEspecificos.Count > 0)
+            {
+                archivos = archivos
+                    .Where(f => paquetesEspecificos.Contains(Path.GetFileName(f), StringComparer.OrdinalIgnoreCase))
+                    .ToArray();
+            }
 
             var pasos = archivos.Select(a => new MigrationStep
             {
