@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{B3397DC3-21B2-453A-86FE-3F060862E6FA}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{338CEDF8-86BF-4DC7-BEB6-9D7C178E2243}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -618,6 +618,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="r"
+          ParentId="Package\Tarea Integrar datos Clientes"
+          FontInfo="{assembly:Null}"
+          Size="33,60"
+          Id="2af2c963-74c3-412c-a4d9-dd55e8b2ca10"
+          TopLeft="948,283" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

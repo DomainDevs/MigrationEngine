@@ -1,45 +1,43 @@
-﻿using Engine.Services;
+﻿using Engine;
+using Engine.Services;
 using Infrastructure;
 using Infrastructure.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using Core.Entities;
 using System.IO;
+using Core.Entities;
 
-// Crear contenedor de servicios
+// Crear contenedor DI (inyección)
 var services = new ServiceCollection();
 
-// Registrar Infrastructure
-services.AddInfrastructureServices(@"C:\Temp\LogMigration");
-
-// Registrar Engine con inyección de LogWriterMD
-services.AddSingleton<MigrationService>();
+services.AddInfrastructureServices(@"C:\Temp\LogMigration"); // Registrar Infrastructure
+services.AddEngineServices(); // Registrar Engine
 
 var provider = services.BuildServiceProvider();
 
-// Resolver servicios
+// Resolver servicio
 var migrationService = provider.GetRequiredService<MigrationService>();
-var logWriter = provider.GetRequiredService<LogWriterMD>();
 
 // Carpeta donde están los paquetes .dtsx
 string carpetaPaquetes = @"C:\Devs\Core\SISTRAN\MIG1\Sistran.MigrationEngine\MigracionSISE";
 
-// Crear job dinámicamente leyendo los paquetes
+// Leer todos los paquetes .dtsx
 var archivos = Directory.GetFiles(carpetaPaquetes, "*.dtsx");
+
+var pasos = archivos.Select(a => new MigrationStep
+{
+    Nombre = Path.GetFileNameWithoutExtension(a),
+    RutaPaquete = a
+}).ToList();
 
 var job = new MigrationJob
 {
     Nombre = "MigracionDinamica",
-    Pasos = archivos.Select(a => new MigrationStep
-    {
-        Nombre = Path.GetFileNameWithoutExtension(a),
-        RutaPaquete = a
-    }).ToList()
+    Pasos = pasos
 };
 
 // Ejecutar job
 migrationService.EjecutarJob(job);
 
-// Mostrar resumen por consola
 Console.WriteLine($"Job {job.Nombre} ejecutado. Completado: {job.Completado}");
 foreach (var paso in job.Pasos)
 {

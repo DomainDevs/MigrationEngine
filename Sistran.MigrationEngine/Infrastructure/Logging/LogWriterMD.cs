@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infrastructure.Logging
 {
-    public class LogWriterMD
+    public class LogWriterMD : ILogWriterMD
     {
         private readonly string _carpetaBase;
 

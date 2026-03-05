@@ -2,63 +2,74 @@
 using Infrastructure.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata;
 
 namespace Engine.Services
 {
     public class MigrationService
     {
-        private readonly LogWriterMD _logWriter;
-        private readonly List<LogEntry> _logTemp = new();
+        private readonly ILogWriterMD _logWriter;
 
-        public MigrationService(LogWriterMD logWriter)
+        public MigrationService(ILogWriterMD logWriter)
         {
-            _logWriter = logWriter;
+            _logWriter = logWriter ?? throw new ArgumentNullException(nameof(logWriter));
         }
 
-        public void EjecutarPaso(MigrationStep step)
+        /// <summary>
+        /// Ejecuta un paso individual y devuelve el LogEntry
+        /// </summary>
+        private LogEntry EjecutarPaso(MigrationStep step)
         {
             step.Inicio = DateTime.Now;
+            var logEntry = new LogEntry
+            {
+                NombrePaso = step.Nombre,
+                Inicio = step.Inicio
+            };
 
             try
             {
-                // Aquí ejecutarías el paquete SSIS
+                // Aquí se ejecutaría el paquete SSIS
                 step.Exito = true;
                 step.Mensaje = "Paso ejecutado correctamente";
+
+                logEntry.Exito = true;
+                logEntry.Mensaje = step.Mensaje;
             }
             catch (Exception ex)
             {
                 step.Exito = false;
                 step.Mensaje = ex.Message;
+
+                logEntry.Exito = false;
+                logEntry.Mensaje = ex.Message;
             }
             finally
             {
                 step.Fin = DateTime.Now;
-
-                // Guardar en lista temporal
-                _logTemp.Add(new LogEntry
-                {
-                    NombrePaso = step.Nombre,
-                    Exito = step.Exito,
-                    Inicio = step.Inicio,
-                    Fin = step.Fin,
-                    Mensaje = step.Mensaje
-                });
+                logEntry.Fin = step.Fin;
             }
+
+            return logEntry;
         }
 
+        /// <summary>
+        /// Ejecuta todos los pasos de un job
+        /// </summary>
         public void EjecutarJob(MigrationJob job)
         {
+            if (job == null) throw new ArgumentNullException(nameof(job));
+            if (job.Pasos == null || job.Pasos.Count == 0) return;
+
             job.FechaEjecucion = DateTime.Now;
 
-            foreach (var paso in job.Pasos)
-            {
-                EjecutarPaso(paso);
-            }
+            var logs = job.Pasos.Select(EjecutarPaso).ToList();
 
-            job.Completado = job.Pasos.TrueForAll(p => p.Exito);
+            job.Completado = job.Pasos.All(p => p.Exito);
 
-            // Al final del Job, escribimos todo el log de una vez
-            _logWriter.EscribirLog(job.Nombre, _logTemp);
+            // Escribir log al final
+            _logWriter.EscribirLog(job.Nombre, logs);
         }
     }
 }
