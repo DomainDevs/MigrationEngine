@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.37012.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETLExecutions", "ETLExecutions", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logs", "Logs", "{611BCC85-B6EC-4122-BE58-B8DF1C8FCF4A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationEngine", "MigrationEngine", "{55D38C6A-9228-486F-A629-236D8E1FEA52}"
 EndProject
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "MigracionSISE", "MigracionSISE\MigracionSISE.dtproj", "{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}"
