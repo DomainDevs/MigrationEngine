@@ -46,8 +46,9 @@ namespace Infrastructure.Logging
             {
                 sb.AppendLine($"## Paso: {log.NombrePaso}");
                 sb.AppendLine("```text");
-                sb.AppendLine($"Inicio: {log.Inicio:HH:mm:ss}");
-                sb.AppendLine($"Fin:    {log.Fin:HH:mm:ss}");
+                // Mostrar inicio y fin con milisegundos
+                sb.AppendLine($"Inicio: {log.Inicio:HH:mm:ss.fff}");
+                sb.AppendLine($"Fin:    {log.Fin:HH:mm:ss.fff}");
                 sb.AppendLine($"Duración: {(log.Fin - log.Inicio).TotalSeconds:F2} segundos");
                 sb.AppendLine($"Resultado: {(log.Exito ? "Success" : "Failure")}");
                 if (!string.IsNullOrWhiteSpace(log.Mensaje))
