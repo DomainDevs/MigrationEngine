@@ -36,6 +36,11 @@ namespace Engine.Services
 
                 logEntry.Exito = true;
                 logEntry.Mensaje = step.Mensaje;
+
+                // Consola mínima: mostrar solo pasos fallidos
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"[OK] {step.Nombre}");
+                Console.ResetColor();
             }
             catch (Exception ex)
             {
@@ -44,6 +49,11 @@ namespace Engine.Services
 
                 logEntry.Exito = false;
                 logEntry.Mensaje = ex.Message;
+
+                // Consola mínima: resaltar fallos
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"[X] {step.Nombre} - {step.Mensaje}");
+                Console.ResetColor();
             }
             finally
             {
@@ -64,11 +74,18 @@ namespace Engine.Services
 
             job.FechaEjecucion = DateTime.Now;
 
+            Console.WriteLine($"\nEjecutando Job: {job.Nombre}\n");
+
             var logs = job.Pasos.Select(EjecutarPaso).ToList();
 
             job.Completado = job.Pasos.All(p => p.Exito);
 
             _logWriter.EscribirLog(job.Nombre, logs);
+
+            // Resumen final en consola
+            Console.ForegroundColor = job.Completado ? ConsoleColor.Green : ConsoleColor.Red;
+            Console.WriteLine($"\nJob completado: {(job.Completado ? "[OK] Éxito total" : "[X] Hubo errores")}");
+            Console.ResetColor();
         }
 
         /// <summary>
