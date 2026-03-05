@@ -17,7 +17,7 @@ namespace Engine.Services
         }
 
         /// <summary>
-        /// Ejecuta un paso individual y devuelve el LogEntry
+        /// Ejecuta un paso individual y muestra resultado mínimo en consola
         /// </summary>
         private LogEntry EjecutarPaso(MigrationStep step)
         {
@@ -37,10 +37,9 @@ namespace Engine.Services
                 logEntry.Exito = true;
                 logEntry.Mensaje = step.Mensaje;
 
-                // Consola mínima: mostrar solo pasos fallidos
+                // Consola mínima
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"[OK] {step.Nombre}");
-                Console.ResetColor();
+                Console.WriteLine($"> {step.Nombre} [OK]");
             }
             catch (Exception ex)
             {
@@ -50,13 +49,12 @@ namespace Engine.Services
                 logEntry.Exito = false;
                 logEntry.Mensaje = ex.Message;
 
-                // Consola mínima: resaltar fallos
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"[X] {step.Nombre} - {step.Mensaje}");
-                Console.ResetColor();
+                Console.WriteLine($"> {step.Nombre} [FAIL]");
             }
             finally
             {
+                Console.ResetColor();
                 step.Fin = DateTime.Now;
                 logEntry.Fin = step.Fin;
             }
@@ -65,7 +63,7 @@ namespace Engine.Services
         }
 
         /// <summary>
-        /// Ejecuta todos los pasos de un job existente
+        /// Ejecuta todos los pasos de un job
         /// </summary>
         public void EjecutarJob(MigrationJob job)
         {
@@ -74,22 +72,17 @@ namespace Engine.Services
 
             job.FechaEjecucion = DateTime.Now;
 
-            Console.WriteLine($"\nEjecutando Job: {job.Nombre}\n");
-
             var logs = job.Pasos.Select(EjecutarPaso).ToList();
-
             job.Completado = job.Pasos.All(p => p.Exito);
 
             _logWriter.EscribirLog(job.Nombre, logs);
 
-            // Resumen final en consola
-            Console.ForegroundColor = job.Completado ? ConsoleColor.Green : ConsoleColor.Red;
-            Console.WriteLine($"\nJob completado: {(job.Completado ? "[OK] Éxito total" : "[X] Hubo errores")}");
-            Console.ResetColor();
+            // Mostrar resumen final
+            MostrarResumen(job, logs);
         }
 
         /// <summary>
-        /// Método nuevo: crea y ejecuta un job dinámico desde una carpeta
+        /// Ejecuta un job dinámico desde carpeta
         /// </summary>
         public void EjecutarJobDesdeCarpeta(string nombreJob, string carpetaPaquetes)
         {
@@ -107,10 +100,35 @@ namespace Engine.Services
             var job = new MigrationJob
             {
                 Nombre = nombreJob,
-                Pasos = pasos
+                Pasos = pasos,
+                FechaEjecucion = DateTime.Now
             };
 
             EjecutarJob(job);
+        }
+
+        /// <summary>
+        /// Muestra en consola un resumen del Job ejecutado
+        /// </summary>
+        private void MostrarResumen(MigrationJob job, List<LogEntry> logs)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"\n====== Resumen Job: {job.Nombre} ======");
+            Console.ResetColor();
+
+            int exitos = logs.Count(l => l.Exito);
+            int fallidos = logs.Count - exitos;
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Total pasos: {logs.Count}");
+            Console.WriteLine($"Éxitos:      {exitos}");
+            Console.WriteLine($"Fallidos:    {fallidos}");
+            Console.ResetColor();
+
+            // Estado final del job
+            Console.ForegroundColor = job.Completado ? ConsoleColor.Green : ConsoleColor.Red;
+            Console.WriteLine($"\nEstado final del Job: {(job.Completado ? "[OK]" : "[FAIL]")}");
+            Console.ResetColor();
         }
     }
 }

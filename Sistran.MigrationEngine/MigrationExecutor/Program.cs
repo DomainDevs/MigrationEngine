@@ -48,8 +48,6 @@ try
     // Banner de ejecución
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine($"\n[Information] Ejecutando Job: {migrationConfigObj.NombreJob}");
-    Console.WriteLine($"[Information] Carpeta de paquetes: {migrationConfigObj.CarpetaPaquetes}");
-    Console.WriteLine($"[Information] Carpeta de logs: {migrationConfigObj.CarpetaLogs}");
     Console.ResetColor();
 
     // Ejecutar job dinámico desde carpeta
@@ -57,6 +55,11 @@ try
         migrationConfigObj.NombreJob,
         migrationConfigObj.CarpetaPaquetes
     );
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine($"[Information] Carpeta de paquetes: {migrationConfigObj.CarpetaPaquetes}");
+    Console.WriteLine($"[Information] Carpeta de logs: {migrationConfigObj.CarpetaLogs}");
+    Console.ResetColor();
 
     // Banner final
     Console.ForegroundColor = ConsoleColor.Green;
