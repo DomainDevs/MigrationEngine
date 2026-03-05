@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace Engine.Services
 {
@@ -77,6 +78,9 @@ namespace Engine.Services
 
             _logWriter.EscribirLog(job.Nombre, logs);
 
+            // Generar reporte JSON
+            GenerarReporteJson(job, logs);
+
             // Mostrar resumen final
             MostrarResumen(job, logs);
         }
@@ -86,20 +90,56 @@ namespace Engine.Services
         /// </summary>
         public void EjecutarJobDesdeCarpeta(string nombreJob, string carpetaPaquetes, List<string>? paquetesEspecificos = null)
         {
-            if (string.IsNullOrWhiteSpace(nombreJob)) throw new ArgumentException("Nombre del job requerido.", nameof(nombreJob));
-            if (!Directory.Exists(carpetaPaquetes)) throw new DirectoryNotFoundException($"La carpeta {carpetaPaquetes} no existe.");
+            if (string.IsNullOrWhiteSpace(nombreJob))
+                throw new ArgumentException("Nombre del job requerido.", nameof(nombreJob));
 
-            var archivos = Directory.GetFiles(carpetaPaquetes, "*.dtsx");
+            if (!Directory.Exists(carpetaPaquetes))
+                throw new DirectoryNotFoundException($"La carpeta {carpetaPaquetes} no existe.");
 
-            // Filtrar paquetes específicos si se indicaron
+            var archivosDisponibles = Directory.GetFiles(carpetaPaquetes, "*.dtsx");
+
+            // Si se especificaron paquetes
             if (paquetesEspecificos != null && paquetesEspecificos.Count > 0)
             {
-                archivos = archivos
+                var nombresDisponibles = archivosDisponibles
+                    .Select(f => Path.GetFileName(f))
+                    .ToList();
+
+                // Detectar paquetes inexistentes
+                var paquetesNoEncontrados = paquetesEspecificos
+                    .Where(p => !nombresDisponibles.Contains(p, StringComparer.OrdinalIgnoreCase))
+                    .ToList();
+
+                if (paquetesNoEncontrados.Any())
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n[ERROR] Error de parametrización. Los siguientes paquetes no existen:");
+                    foreach (var p in paquetesNoEncontrados)
+                    {
+                        Console.WriteLine($" - {p}");
+                    }
+                    Console.ResetColor();
+
+                    throw new FileNotFoundException(
+                        $"Paquetes no encontrados: {string.Join(", ", paquetesNoEncontrados)}"
+                    );
+                }
+
+                // Filtrar solo los que existen
+                archivosDisponibles = archivosDisponibles
                     .Where(f => paquetesEspecificos.Contains(Path.GetFileName(f), StringComparer.OrdinalIgnoreCase))
                     .ToArray();
             }
 
-            var pasos = archivos.Select(a => new MigrationStep
+            if (archivosDisponibles.Length == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n[ERROR] No hay paquetes válidos para ejecutar.");
+                Console.ResetColor();
+                return;
+            }
+
+            var pasos = archivosDisponibles.Select(a => new MigrationStep
             {
                 Nombre = Path.GetFileNameWithoutExtension(a),
                 RutaPaquete = a
@@ -137,6 +177,55 @@ namespace Engine.Services
             Console.ForegroundColor = job.Completado ? ConsoleColor.Green : ConsoleColor.Red;
             Console.WriteLine($"\nEstado final del Job: {(job.Completado ? "[OK]" : "[FAIL]")}");
             Console.ResetColor();
+        }
+
+        /// <summary>
+        /// Genera un reporte JSON completo del Job ejecutado
+        /// </summary>
+        private void GenerarReporteJson(MigrationJob job, List<LogEntry> logs)
+        {
+            try
+            {
+                var reporte = new
+                {
+                    job.Nombre,
+                    FechaEjecucion = job.FechaEjecucion.HasValue
+                    ? job.FechaEjecucion.Value.ToString("yyyy-MM-dd HH:mm:ss")
+                    : null,
+                    Completado = job.Completado,
+                    TotalPasos = logs.Count,
+                    Exitos = logs.Count(l => l.Exito),
+                    Fallidos = logs.Count(l => !l.Exito),
+                    Pasos = logs.Select(l => new
+                    {
+                        l.NombrePaso,
+                        l.Inicio,
+                        l.Fin,
+                        l.Exito,
+                        l.Mensaje
+                    }).ToList()
+                };
+
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+
+                string json = JsonSerializer.Serialize(reporte, jsonOptions);
+
+                string rutaReporte = Path.Combine(AppContext.BaseDirectory, $"{job.Nombre}_MigrationReport.json");
+                File.WriteAllText(rutaReporte, json);
+
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"\nReporte JSON generado: {rutaReporte}");
+                Console.ResetColor();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\n[WARN] No se pudo generar reporte JSON: {ex.Message}");
+                Console.ResetColor();
+            }
         }
     }
 }
