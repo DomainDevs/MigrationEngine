@@ -1,11 +1,11 @@
-﻿using Engine;
-using Engine.Services;
-using Infrastructure;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MigrationExecutor.Utils;
 using Microsoft.Extensions.Logging;
+using MigrationExecutor.Console.Utils;
+using Engine.Services;
+using Infrastructure;
+using Engine;
 
 try
 {

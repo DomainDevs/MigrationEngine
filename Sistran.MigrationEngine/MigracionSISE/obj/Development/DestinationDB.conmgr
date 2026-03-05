@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=DESKTOP-O7N0ROR;User ID=sqluser;Initial Catalog=PruebasMigracion2;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-MigracionSISE-{95B54F1B-E488-4C47-8CE0-33C2C9BFC39D}DESKTOP-O7N0ROR.PruebasMigracion2.sqluser1 1;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAADgqjlQ/4nzhIbbYaIkQc/A/4sjzrJcFndY6dcfp0JIwAAAAAAOgAAAAAIAACAAAABXpSFHweiPgDyb8SHwAks81SaqNrrqiHAUapqjKfNDdIAAAADTtohBy3y/i05fGoeyxCecoWrQh11PNk8HWq6k6KJ8+Ducb5E9vSNc7VJqqrZo2P67ebSP1VCgWBySBqXvVTDJejtSbISKfqBjwzChecQzhx4VnG6LD8XKqzSqlwNOSi6Narp0Z+4WUVxbYTiXXWKtClHIeiDy0j+zZwGUsTaavUAAAABcbj6PrXduUAlAHFT2X36RGttXWNquQPDYt3n8XQevDnKUO+dcDdlK4o/KB7wWMZe9dCZ7v1O9dZyPeYJ8iaEW</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAABDLxtgkkigV9jMtY4Gc/8dzjyhpWD5uu8tMX2ew4bsuQAAAAAOgAAAAAIAACAAAABZ/RymCdaqDpFb09iemwMn3WEfTfkNZG26Z8zoKElM4IAAAAByXL44+nCerkwArorvMvAaYcQoAAWpaXE8tww+r0CIuO1SOtOKi7hQAisVnumJyDhD0S3nyjVjmA/PZjffYyy14RWU+N5etflwI55bPf4jHL+udUI+wgzIsyEphTPYszDVCD5EZi9gCEkLs/sfXwPX3ad2nABPOrAP64ePySASPkAAAADtRuZH3uzvTIpsPzANHlSk4w6DBt1mp3z4VI60yj1H1ATc9lWqi0wlLzEZP3N2EH14SeH1YEkucvjHULYg/AoW</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
