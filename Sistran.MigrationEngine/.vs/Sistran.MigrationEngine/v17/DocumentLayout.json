@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\utils\\migrationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\utils\\migrationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T23:37:57.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MigrationConfig.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T23:37:51.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
+              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-05T23:37:37.342Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
