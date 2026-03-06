@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core.Entities;
 using Engine.Services;
-using Core.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using MigrationExecutor.WebAPI.Utils;
+using System.ComponentModel;
 
 namespace MigrationExecutor.WebAPI.Controllers;
 
@@ -12,10 +14,10 @@ public class MigrationController : ControllerBase
     private readonly MigrationService _migrationService;
     private readonly MigrationConfig _config;
 
-    public MigrationController(MigrationService migrationService, MigrationConfig config)
+    public MigrationController(MigrationService migrationService, IOptions<MigrationConfig> config)
     {
         _migrationService = migrationService ?? throw new ArgumentNullException(nameof(migrationService));
-        _config = config;
+        _config = config.Value;
     }
 
 
@@ -110,7 +112,12 @@ public class MigrationController : ControllerBase
 
 public class JobRequest
 {
-    public string Nombre { get; set; } = string.Empty;
+    [DefaultValue("MigracionDinamica")]
+    public string Nombre { get; set; } = "MigracionDinamica";
+
+    [DefaultValue("[]")]
     public List<string>? PaquetesIncluir { get; set; }
+
+    [DefaultValue("[]")]
     public List<string>? PaquetesOmitir { get; set; }
 }

@@ -14,9 +14,7 @@ builder.Configuration.AddJsonFile("Configurations/appsettings.json", optional: f
 builder.Configuration.AddJsonFile("Configurations/documentation.json", optional: false, reloadOnChange: true);
 
 // Para poder inyectar directamente MigrationConfig, opcionalmente:
-builder.Services.AddSingleton(sp =>
-    sp.GetRequiredService<IOptions<MigrationConfig>>().Value
-);
+builder.Services.Configure<MigrationConfig>(builder.Configuration.GetSection("Migration"));
 
 // Registrar servicios de Infrastructure y Engine
 var rutaLogs = builder.Configuration.GetValue<string>("Migration:CarpetaLogs");
