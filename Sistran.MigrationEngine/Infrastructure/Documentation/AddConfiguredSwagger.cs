@@ -81,8 +81,8 @@ internal static class AddConfiguredSwagger
             .UseSwagger()
             .UseSwaggerUI(config =>
             {
-                config.SwaggerEndpoint("/swagger/v1/swagger.json", "RealStateSite v1");
-                config.SwaggerEndpoint("/swagger/v2/swagger.json", "RealStateSite v2");
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistran.MigrationEngine v1");
+                config.SwaggerEndpoint("/swagger/v2/swagger.json", "Sistran.MigrationEngine v2");
             }
             );
         }

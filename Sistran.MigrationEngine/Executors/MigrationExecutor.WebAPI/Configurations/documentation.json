@@ -1,11 +1,11 @@
 {
   "SwaggerSettings": {
     "Enable": true,
-    "Title": "RealState WebSite",
+    "Title": "Sistran.MigrationEngine",
     "Version1": "v1",
     "Version2": "v2",
     "Description": "Clean Architecture .NET 9.0 WebApi.",
-    "Contact": "Fernando Poveda",
-    "ContactEmail": "devacountmanagement@gmail.com"
+    "Contact": ": Fernando Poveda",
+    "ContactEmail": "dfperez@sistran.com.co"
   }
 }
