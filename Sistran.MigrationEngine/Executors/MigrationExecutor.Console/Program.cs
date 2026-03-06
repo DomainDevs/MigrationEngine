@@ -33,7 +33,7 @@ try
         .ConfigureServices((context, services) =>
         {
             var migrationConfig = context.Configuration.GetSection("Migration").Get<MigrationConfig>();
-            services.AddInfrastructureServices(migrationConfig.CarpetaLogs);
+            services.AddInfrastructureServices(context.Configuration, migrationConfig.CarpetaLogs);
             services.AddEngineServices();
         })
         .Build();

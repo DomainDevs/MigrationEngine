@@ -12,12 +12,8 @@ public static class Startup
     {
         // Carpeta de logs
         var rutaLogs = configuration.GetValue<string>("Migration:CarpetaLogs");
-
-        // Infrastructure
-        services.AddInfrastructureServices(rutaLogs);
-
-        // Engine
-        services.AddEngineServices();
+        services.AddInfrastructureServices(configuration, rutaLogs);   // Infrastructure
+        services.AddEngineServices();   // Engine
 
         // Controllers
         services.AddControllers();
@@ -25,5 +21,20 @@ public static class Startup
         // Swagger
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+    }
+    public static void Configure(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MigrationExecutor API v1");
+            });
+        }
+
+        app.UseHttpsRedirection();
+        app.UseAuthorization();
+        app.MapControllers();
     }
 }

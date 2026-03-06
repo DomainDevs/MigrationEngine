@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\utils\\migrationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\utils\\migrationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|solutionrelative:executors\\migrationexecutor.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.console\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F874C133-D8FA-49EA-B801-FF39BFD6AFC2}|Executors\\MigrationExecutor.Console\\MigrationExecutor.Console.csproj|solutionrelative:executors\\migrationexecutor.console\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.webapi\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|solutionrelative:executors\\migrationexecutor.webapi\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|solutionrelative:executors\\migrationexecutor.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\documentation\\addconfiguredswagger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\documentation\\addconfiguredswagger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\documentation\\extension\\swaggersecurityrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\documentation\\extension\\swaggersecurityrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\documentation\\swaggersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\documentation\\swaggersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
-              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
-              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
-              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Utils\\Startup.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T23:37:57.368Z"
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.WebAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Executors\\MigrationExecutor.WebAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-06T00:57:40.832Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MigrationConfig.cs",
-              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
-              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
-              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
-              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Utils\\MigrationConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Program.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Program.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Program.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T23:37:51.853Z",
+              "WhenOpened": "2026-03-06T00:56:03.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddConfiguredSwagger.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\AddConfiguredSwagger.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Documentation\\AddConfiguredSwagger.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\AddConfiguredSwagger.cs",
+              "RelativeToolTip": "Infrastructure\\Documentation\\AddConfiguredSwagger.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T00:50:57.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SwaggerSecurityRequirement.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\Extension\\SwaggerSecurityRequirement.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Documentation\\Extension\\SwaggerSecurityRequirement.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\Extension\\SwaggerSecurityRequirement.cs",
+              "RelativeToolTip": "Infrastructure\\Documentation\\Extension\\SwaggerSecurityRequirement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T00:44:15.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Program.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.WebAPI\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAewAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T00:40:28.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
-              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
-              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
-              "RelativeToolTip": "Executors\\MigrationExecutor.Console\\Configurations\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-05T23:37:37.342Z"
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T00:35:04.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SwaggerSettings.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\SwaggerSettings.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Documentation\\SwaggerSettings.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Documentation\\SwaggerSettings.cs",
+              "RelativeToolTip": "Infrastructure\\Documentation\\SwaggerSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T00:16:12.598Z",
+              "EditorCaption": ""
             }
           ]
         }

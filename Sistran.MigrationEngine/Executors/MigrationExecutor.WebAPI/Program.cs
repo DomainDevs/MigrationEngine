@@ -12,15 +12,11 @@ builder.Configuration.AddJsonFile("Configurations/appsettings.json", optional: f
 
 // Registrar servicios de Infrastructure y Engine
 var rutaLogs = builder.Configuration.GetValue<string>("Migration:CarpetaLogs");
-builder.Services.AddInfrastructureServices(rutaLogs);
+builder.Services.AddInfrastructureServices(builder.Configuration, rutaLogs);
 builder.Services.AddEngineServices();
 
 // Registrar controladores
 builder.Services.AddControllers();
-
-// Registrar OpenAPI/Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); // Esto viene de Microsoft.AspNetCore.OpenApi
 
 var app = builder.Build();
 
