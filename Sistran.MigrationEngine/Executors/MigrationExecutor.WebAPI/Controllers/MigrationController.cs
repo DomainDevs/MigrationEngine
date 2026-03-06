@@ -33,30 +33,10 @@ public class MigrationController : ControllerBase
                 paquetesOmitir: request.PaquetesOmitir
             );
 
-            return Ok(new { Mensaje = "Job ejecutado correctamente" });
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(new { Error = ex.Message });
-        }
-    }
-
-    /// <summary>
-    /// Ejecuta un job completo enviando la lista de pasos
-    /// </summary>
-    [HttpPost("run-job")]
-    public IActionResult RunJob([FromBody] MigrationJob job)
-    {
-        if (job == null || job.Pasos == null || !job.Pasos.Any())
-            return BadRequest("Debe indicar el job y sus pasos.");
-
-        try
-        {
-            _migrationService.EjecutarJob(job);
             return Ok(new
             {
                 Mensaje = "Job ejecutado correctamente",
-                Job = job
+                Job = request.Nombre
             });
         }
         catch (Exception ex)
@@ -70,43 +50,10 @@ public class MigrationController : ControllerBase
     }
 
     /// <summary>
-    /// Ejecuta un job desde carpeta, filtrando paquetes a incluir o excluir
-    /// </summary>
-    [HttpPost("run-job-from-folder")]
-    public IActionResult RunJobFromFolder([FromQuery] string nombreJob,
-                                          [FromQuery] string carpetaPaquetes,
-                                          [FromQuery] string[] paquetesIncluir,
-                                          [FromQuery] string[] paquetesOmitir)
-    {
-        if (string.IsNullOrWhiteSpace(nombreJob) || string.IsNullOrWhiteSpace(carpetaPaquetes))
-            return BadRequest("Debe indicar el nombre del job y la carpeta de paquetes.");
-
-        try
-        {
-            _migrationService.EjecutarJobDesdeCarpeta(
-                nombreJob,
-                carpetaPaquetes,
-                paquetesIncluir?.ToList(),
-                paquetesOmitir?.ToList()
-            );
-
-            return Ok(new { Mensaje = $"Job '{nombreJob}' ejecutado correctamente." });
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new
-            {
-                Mensaje = "Error al ejecutar el job",
-                Error = ex.Message
-            });
-        }
-    }
-
-    /// <summary>
-    /// Endpoint de prueba para verificar que la API funciona
+    /// Endpoint de prueba de salud, verificar que la API funciona
     /// </summary>
     [HttpGet("ping")]
-    public IActionResult Ping() => Ok("MigrationExecutor WebAPI activa.");
+    public IActionResult Ping() => Ok("MigrationExecutor WebAPI activa!!.");
 }
 
 

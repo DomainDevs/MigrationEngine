@@ -13,10 +13,6 @@ public static class Startup
         // Carpeta de logs
         var rutaLogs = configuration.GetValue<string>("Migration:CarpetaLogs");
         services.AddInfrastructureServices(configuration, rutaLogs);   // Infrastructure
-        services.AddEngineServices();   // Engine
-
-        // Controllers
-        services.AddControllers();
 
         // Swagger
         services.AddEndpointsApiExplorer();

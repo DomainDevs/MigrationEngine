@@ -9,21 +9,19 @@ using MigrationExecutor.WebAPI.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Cargar configuración desde appsettings.json
+// Cargar configuración *.json
 builder.Configuration.AddJsonFile("Configurations/appsettings.json", optional: false, reloadOnChange: true);
 builder.Configuration.AddJsonFile("Configurations/documentation.json", optional: false, reloadOnChange: true);
 
 // Para poder inyectar directamente MigrationConfig, opcionalmente:
 builder.Services.Configure<MigrationConfig>(builder.Configuration.GetSection("Migration"));
 
-// Registrar servicios de Infrastructure y Engine
-var rutaLogs = builder.Configuration.GetValue<string>("Migration:CarpetaLogs");
-builder.Services.AddInfrastructureServices(builder.Configuration, rutaLogs, true);
+// Recupera carpeta de logs
+string rutaLogs = builder.Configuration.GetValue<string>("Migration:CarpetaLogs");
 
-builder.Services.AddEngineServices();
-
-// Registrar controladores
-builder.Services.AddControllers();
+builder.Services.AddInfrastructureServices(builder.Configuration, rutaLogs, true); //Registrar Infraestructura
+builder.Services.AddEngineServices(); // Registrar Engine
+builder.Services.AddControllers(); // Registrar controladores
 
 var app = builder.Build();
 
