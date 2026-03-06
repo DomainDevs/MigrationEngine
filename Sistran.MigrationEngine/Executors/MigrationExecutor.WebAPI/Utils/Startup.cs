@@ -25,7 +25,9 @@ public static class Startup
         app.UseSwaggerUI(c =>
         {
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "MigrationExecutor API v1");
+            c.RoutePrefix = "swagger";
         });
+        
 
         app.UseHttpsRedirection();
         app.UseAuthorization();

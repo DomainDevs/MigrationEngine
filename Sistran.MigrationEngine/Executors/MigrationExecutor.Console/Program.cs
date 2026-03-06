@@ -33,7 +33,12 @@ try
         .ConfigureServices((context, services) =>
         {
             var migrationConfig = context.Configuration.GetSection("Migration").Get<MigrationConfig>();
-            services.AddInfrastructureServices(context.Configuration, migrationConfig.CarpetaLogs);
+
+            // Ruta de logs relativa al exe
+            string logsPath = Path.Combine(AppContext.BaseDirectory, migrationConfig.CarpetaLogs);
+            Directory.CreateDirectory(logsPath);
+
+            services.AddInfrastructureServices(context.Configuration, logsPath);
             services.AddEngineServices();
         })
         .Build();

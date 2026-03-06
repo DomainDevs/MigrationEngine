@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Incluir LogMigration y su contenido al publicar -->
+    <None Include="LogMigration\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </None>
+
     <Content Remove="Configurations\appsettings.json" />
   </ItemGroup>
 

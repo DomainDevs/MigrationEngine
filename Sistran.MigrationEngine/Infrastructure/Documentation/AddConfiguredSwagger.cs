@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace Infrastructure.Documentation;
 
-internal static class AddConfiguredSwagger
+public static class AddConfiguredSwagger
 {
-    internal static IServiceCollection AddOpenApiDocumentation(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddOpenApiDocumentation(this IServiceCollection services, IConfiguration config)
     {
         services.AddEndpointsApiExplorer();
         var settings = config.GetSection(nameof(SwaggerSettings)).Get<SwaggerSettings>();
@@ -73,19 +74,24 @@ internal static class AddConfiguredSwagger
         return services;
     }
 
-    internal static IApplicationBuilder UseOpenApiDocumentation(this IApplicationBuilder app, IConfiguration config)
+    public static IApplicationBuilder UseOpenApiDocumentation(this IApplicationBuilder app, IConfiguration config)
     {
-        if (config.GetValue<bool>("SwaggerSettings:Enable"))
+        if (!config.GetValue<bool>("SwaggerSettings:Enable"))
+            return app;
+
+        // Prefijo opcional del Virtual Directory
+        string virtualDir = config.GetValue<string>("SwaggerSettings:VirtualDirectory") ?? string.Empty;
+        if (!string.IsNullOrEmpty(virtualDir) && !virtualDir.StartsWith("/"))
+            virtualDir = "/" + virtualDir;
+
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
         {
-            app.UseDeveloperExceptionPage()
-            .UseSwagger()
-            .UseSwaggerUI(config =>
-            {
-                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistran.MigrationEngine v1");
-                config.SwaggerEndpoint("/swagger/v2/swagger.json", "Sistran.MigrationEngine v2");
-            }
-            );
-        }
+            // Swagger endpoints ajustados al Virtual Directory
+            c.SwaggerEndpoint($"{virtualDir}/swagger/v1/swagger.json", "MigrationExecutor v1");
+            c.SwaggerEndpoint($"{virtualDir}/swagger/v2/swagger.json", "MigrationExecutor v2");
+            c.RoutePrefix = "swagger"; // Swagger UI en la raíz del Virtual Directory
+        });
 
         return app;
     }

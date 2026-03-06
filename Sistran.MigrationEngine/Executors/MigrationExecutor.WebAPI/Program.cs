@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MigrationExecutor.WebAPI.Utils;
+using Infrastructure.Documentation; // <- para AddConfiguredSwagger
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,18 +18,31 @@ builder.Configuration.AddJsonFile("Configurations/documentation.json", optional:
 builder.Services.Configure<MigrationConfig>(builder.Configuration.GetSection("Migration"));
 
 // Recupera carpeta de logs
-string rutaLogs = builder.Configuration.GetValue<string>("Migration:CarpetaLogs");
+string basePath = AppContext.BaseDirectory; // ruta del exe o WebAPI
+
+string rutaLogs = Path.Combine(basePath, builder.Configuration.GetValue<string>("Migration:CarpetaLogs"));
 
 builder.Services.AddInfrastructureServices(builder.Configuration, rutaLogs, true); //Registrar Infraestructura
 builder.Services.AddEngineServices(); // Registrar Engine
-builder.Services.AddControllers(); // Registrar controladores
+//builder.Services.AddControllers(); // Registrar controladores
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// archivos estáticos (wwwroot)
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseInfrastructure(builder.Configuration);
+app.UseOpenApiDocumentation(builder.Configuration); // <- nuestro Swagger ajustado
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
