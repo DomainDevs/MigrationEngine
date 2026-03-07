@@ -1,4 +1,5 @@
-﻿using Infrastructure.Documentation;
+﻿using Infrastructure.Cors;
+using Infrastructure.Documentation;
 using Infrastructure.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -32,12 +33,21 @@ namespace Infrastructure
 
             if (isWEPApi)
             services.AddOpenApiDocumentation(config);
+            services.AddCorsPolicy(config);             // Configura políticas de CORS
 
 
             return services;
         }
 
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder builder, IConfiguration config) =>
-            builder.UseOpenApiDocumentation(config);
+            builder
+            .UseDefaultFiles()                  // 1. archivos estáticos (wwwroot)
+            .UseStaticFiles()                   // 2. archivos estáticos (wwwroot)
+            .UseHttpsRedirection()              // 3. Fuerza HTTPS
+            .UseCors()                          // 4. CORS antes de Auth: Middleware de CORS
+            .UseAuthentication()                // 5. Auth: Middleware de autenticación
+            .UseAuthorization()                 // 6. Authorization: Middleware de autorización
+            .UseOpenApiDocumentation(config);   // 7. Swagger
+
     }
 }

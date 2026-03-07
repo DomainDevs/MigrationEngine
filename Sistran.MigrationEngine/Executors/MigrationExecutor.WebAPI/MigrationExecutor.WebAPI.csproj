@@ -31,4 +31,13 @@
     <ProjectReference Include="..\..\Engine\Engine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\help\assets\css\" />
+    <Folder Include="wwwroot\help\assets\js\" />
+    <Folder Include="wwwroot\help\assets\images\" />
+    <Folder Include="wwwroot\help\assets\icons\" />
+    <Folder Include="wwwroot\help\sections\engine\" />
+    <Folder Include="wwwroot\help\sections\introduction\" />
+  </ItemGroup>
+
 </Project>

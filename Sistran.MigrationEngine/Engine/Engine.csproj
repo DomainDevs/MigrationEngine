@@ -11,4 +11,9 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SSISPackages\Migration\" />
+    <Folder Include="SSISPackages\Validation\" />
+  </ItemGroup>
+
 </Project>

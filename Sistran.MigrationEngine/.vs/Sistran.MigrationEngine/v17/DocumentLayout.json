@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0001_Clientes.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|solutionrelative:MigracionSISE\\0001_Clientes.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0003_PolizaRiesgos.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|solutionrelative:MigracionSISE\\0003_PolizaRiesgos.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0002_Polizas.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{CD4B4B34-71E6-8A38-777E-92AD67F19BE5}|MigracionSISE\\MigracionSISE.dtproj|solutionrelative:MigracionSISE\\0002_Polizas.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\addinfrastructureextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\addinfrastructureextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.webapi\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|solutionrelative:executors\\migrationexecutor.webapi\\utils\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\cors\\addconfiguredcors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\cors\\addconfiguredcors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\infrastructure\\cors\\corssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DEE59C4-E314-4A80-94BB-79A911A66782}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\cors\\corssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|c:\\devs\\core\\sistran\\mig1\\sistran.migrationengine\\executors\\migrationexecutor.webapi\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{09592225-43B6-42F7-812C-97F466784703}|Executors\\MigrationExecutor.WebAPI\\MigrationExecutor.WebAPI.csproj|solutionrelative:executors\\migrationexecutor.webapi\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -14,17 +42,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "0003_PolizaRiesgos.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0003_PolizaRiesgos.dtsx",
+              "RelativeDocumentMoniker": "MigracionSISE\\0003_PolizaRiesgos.dtsx",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0003_PolizaRiesgos.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "MigracionSISE\\0003_PolizaRiesgos.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-06T18:23:22.856Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "0002_Polizas.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0002_Polizas.dtsx",
+              "RelativeDocumentMoniker": "MigracionSISE\\0002_Polizas.dtsx",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0002_Polizas.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "MigracionSISE\\0002_Polizas.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-06T18:23:03.021Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "0001_Clientes.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0001_Clientes.dtsx",
+              "RelativeDocumentMoniker": "MigracionSISE\\0001_Clientes.dtsx",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\MigracionSISE\\0001_Clientes.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "MigracionSISE\\0001_Clientes.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-06T18:22:58.094Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddInfrastructureExtension.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\AddInfrastructureExtension.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\AddInfrastructureExtension.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\AddInfrastructureExtension.cs",
+              "RelativeToolTip": "Infrastructure\\AddInfrastructureExtension.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAawDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T17:48:47.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "RelativeDocumentMoniker": "Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "RelativeToolTip": "Executors\\MigrationExecutor.WebAPI\\Utils\\Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T13:12:43.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddConfiguredCors.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Cors\\AddConfiguredCors.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Cors\\AddConfiguredCors.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Cors\\AddConfiguredCors.cs",
+              "RelativeToolTip": "Infrastructure\\Cors\\AddConfiguredCors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T13:09:41.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CorsSettings.cs",
+              "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Cors\\CorsSettings.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Cors\\CorsSettings.cs",
+              "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Infrastructure\\Cors\\CorsSettings.cs",
+              "RelativeToolTip": "Infrastructure\\Cors\\CorsSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T13:08:49.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "Executors\\MigrationExecutor.WebAPI\\wwwroot\\index.html",
               "ToolTip": "C:\\Devs\\Core\\SISTRAN\\MIG1\\Sistran.MigrationEngine\\Executors\\MigrationExecutor.WebAPI\\wwwroot\\index.html",
               "RelativeToolTip": "Executors\\MigrationExecutor.WebAPI\\wwwroot\\index.html",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-03-06T12:11:37.292Z",
               "EditorCaption": ""

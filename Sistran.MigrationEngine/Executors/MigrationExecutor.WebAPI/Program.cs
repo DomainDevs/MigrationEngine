@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Cargar configuración *.json
 builder.Configuration.AddJsonFile("Configurations/appsettings.json", optional: false, reloadOnChange: true);
 builder.Configuration.AddJsonFile("Configurations/documentation.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("Configurations/cors.json", optional: false, reloadOnChange: true);
 
 // Para poder inyectar directamente MigrationConfig, opcionalmente:
 builder.Services.Configure<MigrationConfig>(builder.Configuration.GetSection("Migration"));
@@ -31,17 +32,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-// archivos estáticos (wwwroot)
-app.UseDefaultFiles();
-app.UseStaticFiles();
-
 app.UseInfrastructure(builder.Configuration);
-app.UseOpenApiDocumentation(builder.Configuration); // <- nuestro Swagger ajustado
-
-
-app.UseHttpsRedirection();
-app.UseAuthorization();
 
 app.MapControllers();
 
