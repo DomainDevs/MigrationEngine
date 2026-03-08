@@ -26,13 +26,15 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-O7N0ROR</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAAADReJfUas0VFGE4DoZmu7CG0hVxh62WjWeSismi6dX3QAAAAAOgAAAAAIAACAAAABb3kvGvY4fpeLtbsxsr61cHvJ3erYEQhGOeLfM3MV9fpAAAAAr4aBAUall88IkU6kfRKp4aJQBQZF6XlzzCngAvSkcskQ9RtX3RtMEYlCipV/5iKBnsoXWHRQIAyqh73yy6Vo+LBJ+F4FD+pFV3RZIupBUsP3RZxlqVmw3JusRkpQWzXVDp8glGiFB8UboLgnmi1IwNUKOXfor8IStoz7ba3lc47RP/sq/QmJg/zet/VS1TCJAAAAAct+XytDJmL8W1B/u3Ek0aXDWTTWwOAtsLX5LTQIHi0zfhdraHiZSO6uGn8u5LpOOPvdqxYOY5iQwNPBqjr6zmQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAADRGRuJWfZngWU8jFl4UqPhRDK4DuJddwgeNuxcmCzDpAAAAAAOgAAAAAIAACAAAAA3OzNFCK/ljrQOzoGReEdfSEiLYS3Vw3x8TvDzQOq3bZAAAAAP9D55T6NpNN+iEP5UR9QijnT/WAU66ZkiXwdHCn/bFgnhJy8NZeDPS4/fsPDzFJkbrfaNilCg0Lw3DOaDn9Pj6otpHJeqFOpSIxvCCICol9Ww5ZLA0lsE7WBq9P/4jCjdFuwC9zTlSLgteKs7HdTA+Rptlcm8Qn5gyECPdyAyGTGWr5oWigqdXW0BqBVm3uNAAAAAAFTTLGp8xtkLzM9nV8BtoHC78yxDeiy81sqRyTrMQ4bPTpn4nTxOE3hLUXpdE/w6+dBF+O+5y+Okm+0yjHyVuw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="0001_Clientes.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0002_Polizas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0003_PolizaRiesgos.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="000_Inventario.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Sys.CheckTableSchemaMSSQL.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SourceDB.conmgr" />
@@ -346,10 +348,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{338CEDF8-86BF-4DC7-BEB6-9D7C178E2243}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{462E1257-1459-4456-AB2F-E249C46D0D3F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -452,6 +454,40 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="000_Inventario.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{96ABA83F-2E56-41DF-98AB-1A110202C64E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">000_Inventario</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D7FD198A-DA79-411F-B433-4FFEB87288C1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Sys.CheckTableSchemaMSSQL.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{5BC363B8-3086-49D5-8405-EFE97185D632}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8D07468D-E111-4093-B0F7-0C799216126E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

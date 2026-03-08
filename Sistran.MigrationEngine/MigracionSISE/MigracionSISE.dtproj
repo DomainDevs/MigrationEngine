@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-O7N0ROR</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAAC3Z4odaNrQE+J3fBNxMncKJqBkynU447WZ0QwTP2u5ggAAAAAOgAAAAAIAACAAAAB3YY1/NocitTQLOV8BumeVNwLNI7M5OXhqNPTrdS4e4JAAAACEhjeUYie3plHHDQbOZhTH16gDlYDeILUt7CxpwG2+d2RPYI2SsSYElRaN7LSnGilSW5xEQ0Jovd0WKFCoUknxADghgDpxzUliFGk+HCwaYYgMJQ5nONs+ULuZqvRgBrsCcF7IOv7Hl4UBLud/yfp5/aXhnVqoVa2j4C+xTYcWsQJwJ6SSaDj3MyZk7X+7rz9AAAAA2Rsh2b0jymB4js/RjAuHtRxKjgdZ78g0n/s3JSo4/l/5R2xBOHceZzdlz+qW/dHWxaPK+MNu562g2T/pyTBR1A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqeJUbC8LZ0KU9DBioXLbfQAAAAACAAAAAAAQZgAAAAEAACAAAACdFaOLnAJ/KvVaQCz/FlMwNss37iH+7zY8/4O4y5uw/AAAAAAOgAAAAAIAACAAAABGFV2Jx7oBH2I10l8KgIpuZUMF4rwFlmBG386t7x/c3JAAAADgUPkaztxJLUJVsXA9V0Tt1e40LWqN2gh2WurRg/1nJp0pQyB/sUNklF4EUzA0To3aIaaJT9iT2S/SImaviK4+9epnDckHaHYwiE5qBKJ2/a+GML891p0Jcwr2tcfOglM1GdkE+HnneXZYkzGA5De6Nck6ZKZ3nt0jTzPt2Dfc7IdL26BJU8GPDus1tSfnOLRAAAAA13nriJIdMwcYutQ9NaJc7ggiyZjyKa8/fzkEB8W9OKd1z8I5nrvhg2U70TABimQVf/WANeiVoTsHOR8yoRP/Ag==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="0002_Polizas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="0003_PolizaRiesgos.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="000_Inventario.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Sys.CheckTableSchemaMSSQL.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SourceDB.conmgr" />
@@ -464,6 +465,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{D7FD198A-DA79-411F-B433-4FFEB87288C1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Sys.CheckTableSchemaMSSQL.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{5BC363B8-3086-49D5-8405-EFE97185D632}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8D07468D-E111-4093-B0F7-0C799216126E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
