@@ -1,166 +1,334 @@
 ﻿<!DOCTYPE html>
-<html lang="es" class="light">
+<html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MigrationExecutor Dashboard</title>
 
-    <!-- Tailwind -->
+    <title>.:: MigrationExecutor ::.</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' }</script>
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --vf-primary: #07bf9b;
-            --vf-primary-darker: #06ac8b;
-        }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter',sans-serif;
         }
 
-        .section {
-            border-radius: 12px;
-            padding: 1.5rem;
+        .bg-grid {
+            background-color: #f8fafc;
+            background-image: linear-gradient(#e5e7eb 1px,transparent 1px), linear-gradient(90deg,#e5e7eb 1px,transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .card {
             background: white;
-            color: #111827;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            transition: all .2s;
         }
 
-        .dark .section {
-            background: #1f2937;
-            color: #e5e7eb;
-        }
-
-        .sidebar {
-            width: 280px;
-            background: #f8fafc;
-            border-right: 1px solid #e2e8f0;
-            overflow-y: auto;
-        }
-
-        .dark .sidebar {
-            background: #111827;
-            border-right: 1px solid #374151;
-        }
-
-        .sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 3px;
-        }
+            .card:hover {
+                box-shadow: 0 8px 20px rgba(0,0,0,.05);
+            }
     </style>
 </head>
-<body class="bg-stone-800 dark:bg-sky-100 h-screen flex flex-col transition-colors duration-300">
+<body class="bg-grid min-h-screen p-4">
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
 
-    <header class="bg-white dark:bg-gray-800 shadow-md px-6 py-4 flex justify-between items-center transition-colors duration-300">
-        <div class="flex items-center gap-3">
-            <i class="bi bi-database-fill text-2xl text-[var(--vf-primary)]"></i>
-            <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200">MigrationExecutor</h1>
-        </div>
-        <div class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-            <i class="bi bi-server text-xl"></i>
-            <span>v1.0.0</span>
-            <button id="toggleDark" class="ml-4 px-3 py-1 rounded text-white bg-[var(--vf-primary)] hover:bg-[var(--vf-primary-darker)] dark:bg-[var(--vf-primary-darker)] dark:hover:bg-[var(--vf-primary)] transition flex items-center justify-center">
-                <i id="iconToggle" class="bi bi-sun-fill text-white"></i>
-            </button>
-        </div>
-    </header>
-
-    <div class="flex flex-1 overflow-hidden">
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar p-4">
-            <ul id="menu"></ul>
-        </aside>
-
-        <!-- DASHBOARD CENTRAL -->
-        <main class="flex-1 p-6 overflow-y-auto space-y-6">
-            <div id="dashboard" class="section shadow-md">
-                <div class="border-b pb-4 mb-4 border-gray-200 dark:border-gray-700">
-                    <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">Panel de ejecución de migraciones</h2>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Sistema de ejecución de paquetes de migración</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-3">
-                            <i class="bi bi-play-circle-fill text-[var(--vf-primary)] text-3xl"></i>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Run Migration</h3>
-                        </div>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Ejecuta un job de migración desde los paquetes configurados.</p>
-                        <form action="./api/Migration/run-job-from-folder" method="post">
-                            <button class="mt-4 w-full py-2 rounded-md bg-gray-900 hover:bg-gray-800 text-white transition">Ejecutar migración</button>
-                        </form>
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-3">
-                            <i class="bi bi-heart-pulse-fill text-[var(--vf-primary)] text-3xl"></i>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Ping API</h3>
-                        </div>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Verifica que la WebAPI esté funcionando correctamente.</p>
-                        <a href="./api/migration/ping" class="mt-4 block text-center py-2 rounded-md bg-gray-900 hover:bg-red-600 text-white transition">API Health Check</a>
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-3">
-                            <i class="bi bi-journal-text text-[var(--vf-primary)] text-3xl"></i>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Open API Docs</h3>
-                        </div>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Accede a la documentación de la API.</p>
-                        <a href="./swagger" class="mt-4 block text-center py-2 rounded-md bg-gray-900 hover:bg-green-700 text-white transition">Ver documentación</a>
-                    </div>
-                </div>
+        <!-- NAVBAR -->
+        <header class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <i class="bi bi-database text-blue-600 text-2xl"></i>
+                <span class="font-semibold text-lg">MigrationExecutor</span>
             </div>
+
+            <nav class="hidden md:flex gap-6 text-sm text-gray-600">
+                <a href="#">Dashboard</a>
+                <a href="#">Logs</a>
+                <a href="./swagger">Swagger</a>
+            </nav>
+
+            <div class="flex gap-3">
+                <button class="px-4 py-2 text-sm border rounded-lg">
+                    Health
+                </button>
+
+                <button id="runMigrationBtnHeader" class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg">
+                    Documentation
+                </button>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="p-4 space-y-2">
+            <!-- HERO -->
+            <section>
+                <h1 class="text-2xl font-bold text-gray-800">
+                    Sistran Migration Executor Dashboard
+                </h1>
+                <p class="text-gray-500 mt-1">
+                    Sistema de ejecución de paquetes de migración
+                </p>
+            </section>
+
+            <!-- ACTION CARDS -->
+            <section class="grid md:grid-cols-2 gap-6">
+                <!-- RUN MIGRATION -->
+                <div class="card">
+                    <div class="flex items-center gap-3 mb-1">
+                        <i class="bi bi-play-circle-fill text-blue-600 text-2xl"></i>
+                        <h3 class="font-semibold text-gray-800">
+                            Run Migration
+                        </h3>
+                    </div>
+
+                    <span class="text-gray-500 text-sm mb-3">
+                        Define paquetes a incluir/omitir en JSON para ejecutar la migración.
+                    </span>
+
+                    <textarea id="jsonInput" class="w-full h-32 border rounded-lg p-3 text-sm bg-gray-100">
+				{ "nombre":"MigracionDinamica", "paquetesIncluir":[], "paquetesOmitir":[] 
+				}
+				</textarea>
+
+                    <button id="runMigrationBtn" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg">
+                        Run Migration
+                    </button>
+                    <p id="statusMsg" class="text-sm mt-2"></p>
+                </div>
+
+                <!-- API CARD -->
+                <div class="card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="bi bi-heart-pulse-fill text-green-600 text-2xl"></i>
+                        <h3 class="font-semibold text-gray-800">API Health Check</h3>
+                    </div>
+
+                    <p class="text-gray-500 text-sm mb-4">Verifica que la API esté funcionando correctamente.</p>
+                    <button id="pingApiBtn"
+                            class="block w-full text-center bg-gray-900 hover:bg-gray-700 text-white py-2 rounded-lg">
+                        Ping API
+                    </button>
+
+                    <p id="pingStatus" class="mt-2 text-sm"></p>
+                </div>
+            </section>
+
+            <!-- LOGS -->
+            <section class="card">
+                <h2 class="text-xl font-semibold mb-4">
+                    Migration Logs
+                </h2>
+                <ul id="migrationList" class="space-y-3"></ul>
+            </section>
+
+            <!-- PAGINATION -->
+            <section class="flex justify-center gap-4">
+                <button id="prevPage" class="px-4 py-2 bg-gray-200 rounded-lg">
+                    Anterior
+                </button>
+
+                <span id="pageInfo" class="px-4 py-2 text-gray-500"></span>
+                <button id="nextPage" class="px-4 py-2 bg-gray-200 rounded-lg">
+                    Siguiente
+                </button>
+            </section>
         </main>
 
     </div>
 
+
+
     <script>
-        // Dark mode toggle
-        const toggleBtn = document.getElementById('toggleDark');
-        const icon = document.getElementById('iconToggle');
-        const htmlEl = document.documentElement;
-        toggleBtn.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            icon.classList.toggle('bi-sun-fill');
-            icon.classList.toggle('bi-moon-fill');
+
+        const pingBtn = document.getElementById("pingApiBtn"); //llamar API
+        const pingStatus = document.getElementById("pingStatus"); //llamar API
+
+        let allLinks = []
+        let currentPage = 1
+        const pageSize = 3
+
+        async function loadLogs() {
+
+            const url = "https://localhost/MigrationExecutor.WebAPI/logmigration/"
+            const list = document.getElementById("migrationList")
+
+            list.innerHTML = "Loading..."
+
+            try {
+
+                const res = await fetch(url)
+                const html = await res.text()
+
+                const parser = new DOMParser()
+                const doc = parser.parseFromString(html, "text/html")
+
+                allLinks = [...doc.querySelectorAll("a")]
+                    .map(a => a.getAttribute("href"))
+                    .filter(href => href && href.endsWith(".json"))
+
+                allLinks.sort().reverse()
+
+                renderPage()
+
+            } catch (err) {
+                list.innerHTML = "Error loading logs"
+            }
+        }
+
+        async function renderPage() {
+
+            const list = document.getElementById("migrationList")
+
+            list.innerHTML = ""
+
+            const start = (currentPage - 1) * pageSize
+            const end = start + pageSize
+            const pageLinks = allLinks.slice(start, end)
+
+            for (const file of pageLinks) {
+
+                const url = "https://localhost/MigrationExecutor.WebAPI/logmigration/"
+                const data = await fetch(url + file).then(r => r.json())
+                const ok = data.Fallidos === 0
+                const li = document.createElement("li")
+
+                li.className = "border rounded-lg p-4 bg-gray-50"
+                li.innerHTML = `
+            <div class="flex justify-between">
+                <div>
+                    <div class="font-semibold">${data.NombreJob}</div>
+
+                    <div class="text-xs text-gray-500">
+                    ${data.Generado} · pasos ${data.TotalPasos}
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="text-xs px-2 py-1 rounded ${ok ? "bg-green-600 text-white" : "bg-red-600 text-white"}">
+                        ${ok ? "SUCCESS" : "FAILED"}
+                    </span>
+
+                    <span class="text-xs text-gray-500">
+                    ✔ ${data.Exitos} / ✖ ${data.Fallidos}
+                    </span>
+
+                    <a href="${url}${file}" target="_blank"
+                    class="text-blue-600 text-xs">
+                    view
+                    </a>
+
+                </div>
+            </div>
+            `
+
+                list.appendChild(li)
+
+            }
+
+            const pageInfo = document.getElementById("pageInfo")
+            pageInfo.textContent = `Página ${currentPage} de ${Math.ceil(allLinks.length / pageSize)}`
+
+        }
+
+        document.getElementById("prevPage").onclick = () => {
+            if (currentPage > 1) {
+                currentPage--
+                renderPage()
+            }
+        }
+
+        document.getElementById("nextPage").onclick = () => {
+            if (currentPage * pageSize < allLinks.length) {
+                currentPage++
+                renderPage()
+            }
+        }
+
+        const runBtn = document.getElementById("runMigrationBtn")
+        const jsonInput = document.getElementById("jsonInput")
+        const statusMsg = document.getElementById("statusMsg")
+
+        runBtn.addEventListener('click', async () => {
+
+            let payload;
+
+            try {
+                payload = JSON.parse(jsonInput.value);
+            } catch {
+                statusMsg.textContent = "❌ JSON inválido";
+                statusMsg.className = "mt-2 text-sm text-red-500";
+                return;
+            }
+
+            statusMsg.textContent = "⏳ Ejecutando...";
+            statusMsg.className = "mt-2 text-sm text-yellow-500";
+
+            try {
+
+                const res = await fetch('/MigrationExecutor.WebAPI/api/Migration/run-job-from-folderm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                /* RESPUESTA EXITOSA */
+                if (res.status >= 200 && res.status < 300) {
+
+                    statusMsg.textContent = `✅ Migración ejecutada (HTTP ${res.status})`;
+                    statusMsg.className = "mt-2 text-sm text-green-500";
+                    return;
+                }
+
+                /* ERRORES HTTP */
+                const errorText = await res.text();
+                statusMsg.textContent = `❌ Error HTTP ${res.status}: ${errorText}`;
+                statusMsg.className = "mt-2 text-sm text-red-500";
+
+            }
+            catch (err) {
+                statusMsg.textContent = "❌ Error de conexión: " + err.message;
+                statusMsg.className = "mt-2 text-sm text-red-500";
+            }
+
         });
 
-        // Sidebar menu generation
-        const menuItems = [
-            { href: '#dashboard', icon: 'bi-house-fill', title: 'Dashboard', subtitle: 'Information & Report', active: true },
-            { href: '#about', icon: 'bi-pencil-square', title: 'Documentation', subtitle: 'Documentation' },
-            { href: '#features', icon: 'bi-gift-fill', title: 'Features', subtitle: 'Sweet home' },
-            { href: '#news', icon: 'bi-globe', title: 'News', subtitle: 'Latest updates' },
-            { href: '#blog', icon: 'bi-chat-left-text-fill', title: 'Blog', subtitle: 'What they say' },
-            { href: '#portfolio', icon: 'bi-image-fill', title: 'Portfolio', subtitle: 'Gallery' },
-            { href: '#contacts', icon: 'bi-envelope-fill', title: 'Contacts', subtitle: 'Drop a line' }
-        ];
+        loadLogs()
 
-        const ul = document.getElementById('menu');
-        menuItems.forEach(item => {
-            const li = document.createElement('li');
-            if (item.active) li.classList.add('active');
-            li.innerHTML = `
-        <a href="${item.href}" class="flex items-center gap-3 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:border-l-4 hover:border-vf-primary transition">
-          <i class="bi ${item.icon}"></i>
-          <div>
-            <span>${item.title}</span>
-            <span class="text-xs text-gray-500 dark:text-gray-400">${item.subtitle}</span>
-          </div>
-        </a>
-      `;
-            ul.appendChild(li);
+        setInterval(loadLogs, 15000)
+
+
+
+        //LLamar API
+        pingBtn.addEventListener("click", async () => {
+            pingStatus.textContent = "⏳ Verificando...";
+            pingStatus.className = "mt-2 text-sm text-yellow-500";
+
+            try {
+                const res = await fetch("./api/migration/ping");
+                if (res.ok) {
+                    const text = await res.text(); // O json() si tu API devuelve JSON
+                    pingStatus.textContent = `✅ API OK: ${text}`;
+                    pingStatus.className = "mt-2 text-sm text-green-500";
+                } else {
+                    pingStatus.textContent = `❌ Error HTTP ${res.status}`;
+                    pingStatus.className = "mt-2 text-sm text-red-500";
+                }
+            } catch (err) {
+                pingStatus.textContent = `❌ Error de conexión: ${err.message}`;
+                pingStatus.className = "mt-2 text-sm text-red-500";
+            }
         });
+
     </script>
 
 </body>
